@@ -32,7 +32,29 @@ $ cp node_modules/make-9patched-splash-ionic/make-9patched-splash-ionic.js .
 $ node make-9patched-splash-ionic.js
 ```
 **!!!! DANGER !!!!**
+
 This script will **delete all PNG files** under resources/android/splash, so watch out!
+
+
+and we need to edit the config.xml like this.（add '.9' extension for each PNG）
+
+```xml
+・・・
+<splash src="resources/android/splash/drawable-land-ldpi-screen.9.png" density="land-ldpi"/>
+<splash src="resources/android/splash/drawable-land-mdpi-screen.9.png" density="land-mdpi"/>
+<splash src="resources/android/splash/drawable-land-hdpi-screen.9.png" density="land-hdpi"/>
+<splash src="resources/android/splash/drawable-land-xhdpi-screen.9.png" density="land-xhdpi"/>
+<splash src="resources/android/splash/drawable-land-xxhdpi-screen.9.png" density="land-xxhdpi"/>
+<splash src="resources/android/splash/drawable-land-xxxhdpi-screen.9.png" density="land-xxxhdpi"/>
+<splash src="resources/android/splash/drawable-port-ldpi-screen.9.png" density="port-ldpi"/>
+<splash src="resources/android/splash/drawable-port-mdpi-screen.9.png" density="port-mdpi"/>
+<splash src="resources/android/splash/drawable-port-hdpi-screen.9.png" density="port-hdpi"/>
+<splash src="resources/android/splash/drawable-port-xhdpi-screen.9.png" density="port-xhdpi"/>
+<splash src="resources/android/splash/drawable-port-xxhdpi-screen.9.png" density="port-xxhdpi"/>
+<splash src="resources/android/splash/drawable-port-xxxhdpi-screen.9.png" density="port-xxxhdpi"/>
+・・・
+```
+
 
 ## License
 
