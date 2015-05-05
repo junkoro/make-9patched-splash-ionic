@@ -8,7 +8,7 @@ In ionic project, automatically resize & 9-patch splash.png like this.
 
 junkoro/four-sides-1px-9patcher - https://github.com/junkoro/four-sides-1px-9patcher
 
-and this is depends on this.
+and this depends on node-canvas.
 
 Automattic/node-canvas - https://github.com/Automattic/node-canvas
 
