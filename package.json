@@ -1,0 +1,31 @@
+{
+  "name": "make-9patched-splash-ionic",
+  "version": "0.0.2",
+  "description": "make 9patched splashscreens in ionic project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junkoro/make-9patched-splash-ionic.git"
+  },
+  "keywords": [
+    "node.js",
+    "9-patch",
+    "resize",
+    "ionic",
+    "resources",
+    "android"
+  ],
+  "author": "junkoro <junkorochan@gmail.com> (https://github.com/junkoro)",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/junkoro/make-9patched-splash-ionic/issues"
+  },
+  "homepage": "https://github.com/junkoro/make-9patched-splash-ionic#readme",
+  "dependencies": {
+    "canvas": "^1.2.2",
+    "four-sides-1px-9patcher": "0.0.3"
+  }
+}
