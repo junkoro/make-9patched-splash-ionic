@@ -26,6 +26,8 @@
   "homepage": "https://github.com/junkoro/make-9patched-splash-ionic#readme",
   "dependencies": {
     "canvas": "^1.2.2",
-    "four-sides-1px-9patcher": "0.0.3"
+    "four-sides-1px-9patcher": "0.0.3",
+    "xmldom": "^0.1.19",
+    "xpath": "0.0.9"
   }
 }

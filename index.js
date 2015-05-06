@@ -5,6 +5,10 @@ var fs = require('fs');
 var Canvas = require('canvas');
 var fourSides1px9patcher = require('four-sides-1px-9patcher');
 var Resizer = require('./resize.js');
+var xpath = require('xpath');
+var xmldom = require('xmldom');
+var DOMParser = xmldom.DOMParser;
+var XMLSerializer = xmldom.XMLSerializer;
 
 
 var PATH_RES = 'resources';
@@ -91,11 +95,37 @@ function make9patchedSplashIonic() {
     }
   }
 
+  // resize and 9-patch
   var src = PATH_RES + '/splash.png';
   resizeAnd4sides1px9patch(src, 'land');
   resizeAnd4sides1px9patch(src, 'port');
 
-}
+  // edit config.xml to add '.9.png'
+  var CONFING_XML = 'config.xml';
+  fs.readFile(CONFING_XML, 'utf8', function (err, xml) {
+
+    // get splash nodes
+    var doc = new DOMParser().parseFromString(xml);
+    var select = xpath.useNamespaces({'widget': 'http://www.w3.org/ns/widgets'});
+    var nodes = select('//widget:platform[@name="android"]/widget:splash', doc);
+
+    // for each splash nodes
+    for (var i = 0; i < nodes.length; i++) {
+      var node = nodes[i];
+      var fname = node.getAttribute('src');
+      fname = fname.substring(0, fname.length - '.png'.length);
+      fname += '.9.png';
+      //console.log(fname);
+      node.setAttribute('src', fname);
+    }
+
+    // write new config.xml
+    //fs.writeFile('test.xml', new XMLSerializer().serializeToString(doc));
+    fs.writeFile(CONFING_XML, new XMLSerializer().serializeToString(doc));
+
+  });
+
+} //END make9patchedSplashIonic()
 
 
 module.exports = make9patchedSplashIonic;

@@ -38,6 +38,12 @@ This script will **delete all PNG files** under resources/android/splash, so wat
 
 and we need to edit the config.xml like this.（add '.9' extension for each PNG）
 
+
+```
+**UPDATE 2015.05.06**: Now the script edit config.xml automatically. So no more needs to do this!
+```
+
+
 ```xml
 ・・・
 <splash src="resources/android/splash/drawable-land-ldpi-screen.9.png" density="land-ldpi"/>
