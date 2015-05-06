@@ -1,6 +1,6 @@
 {
   "name": "make-9patched-splash-ionic",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "make 9patched splashscreens in ionic project",
   "main": "index.js",
   "scripts": {
