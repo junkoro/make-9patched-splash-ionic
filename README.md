@@ -1,5 +1,5 @@
 # make-9patched-splash-ionic
-In ionic project, automatically resize & 9-patch splash.png like this.
+This is a node module that do resize & 9-patch ionic project's splash.png automatically like this.
 
 ![FourSide1px9patch.png](img/FourSide1px9patch.png "FourSide1px9patch.png")
 
