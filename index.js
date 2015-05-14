@@ -102,6 +102,7 @@ function make9patchedSplashIonic() {
 
   // edit config.xml to add '.9.png'
   var CONFING_XML = 'config.xml';
+  console.log('editting: ' + CONFING_XML);
   fs.readFile(CONFING_XML, 'utf8', function (err, xml) {
 
     // get splash nodes
@@ -110,13 +111,19 @@ function make9patchedSplashIonic() {
     var nodes = select('//widget:platform[@name="android"]/widget:splash', doc);
 
     // for each splash nodes
+    var EXT_PNG = '.png';
+    var EXT_9PNG = '.9.png';
     for (var i = 0; i < nodes.length; i++) {
       var node = nodes[i];
       var fname = node.getAttribute('src');
-      fname = fname.substring(0, fname.length - '.png'.length);
-      fname += '.9.png';
-      //console.log(fname);
-      node.setAttribute('src', fname);
+      if (fname.indexOf(EXT_9PNG) === -1) {
+        fname = fname.substring(0, fname.length - EXT_PNG.length);
+        fname += EXT_9PNG;
+        console.log('adding .9 :' + fname);
+        node.setAttribute('src', fname);
+      } else {
+        console.log('.9 already added : ' + fname);
+      }
     }
 
     // write new config.xml
