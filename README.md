@@ -40,6 +40,7 @@ and we need to edit the config.xml like this.ï¼ˆadd '.9' extension for each PNGï
 
 
 **UPDATE 2015.05.06**: Now the script edit config.xml automatically. So no more needs to do this!
+**UPDATE 2015.05.14**: Duplicate .9 problem fixed.
 
 
 ```xml
