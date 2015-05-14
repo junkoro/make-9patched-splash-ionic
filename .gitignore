@@ -3,3 +3,4 @@ node_modules
 resources
 config.xml
 test.xml
+exec.js
