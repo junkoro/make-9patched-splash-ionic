@@ -88,7 +88,7 @@ function make9patchedSplashIonic() {
   var RES_DEBUG_PATH = 'platforms/android/build/intermediates/res/debug';
   console.log('Deleting all debug resources : ' + RES_DEBUG_PATH);
   rimraf(RES_DEBUG_PATH, function() {
-    console.log('ERROR deleting debug resources.');
+    //console.log('DONE deleting debug resources.');
   }); //rm -rf
 
   // delete all splash screen images
