@@ -40,6 +40,7 @@ and we need to edit the config.xml like this.（add '.9' extension for each PNG�
 
 
 **UPDATE 2015.05.06**: Now the script edit config.xml automatically. So no more needs to do this!
+
 **UPDATE 2015.05.14**: Duplicate .9 problem fixed.
 
 
@@ -59,6 +60,20 @@ and we need to edit the config.xml like this.（add '.9' extension for each PNG�
 <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.9.png" density="port-xxxhdpi"/>
 ・・・
 ```
+
+## "processDebugResources" issue
+
+If you use "ionic resources" after using make-9patched, you may get "processDebugResources" error when building.
+
+This is because "ionic resources" create un-9patched resources under the following folder.
+
+```bash
+platforms/android/build/intermediates/res/debug
+```
+
+If you got this error, just delete the folder and rebuild.
+
+The version 0.0.6 will do this, so just re-run make-9patched.
 
 
 ## License

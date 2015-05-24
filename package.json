@@ -27,6 +27,7 @@
   "dependencies": {
     "canvas": "^1.2.2",
     "four-sides-1px-9patcher": "0.0.3",
+    "rimraf": "^2.3.4",
     "xmldom": "^0.1.19",
     "xpath": "0.0.9"
   }

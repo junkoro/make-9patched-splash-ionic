@@ -9,6 +9,7 @@ var xpath = require('xpath');
 var xmldom = require('xmldom');
 var DOMParser = xmldom.DOMParser;
 var XMLSerializer = xmldom.XMLSerializer;
+var rimraf = require('rimraf');
 
 
 var PATH_RES = 'resources';
@@ -81,6 +82,14 @@ function resizeAnd4sides1px9patch(src, orientationStr) {
 
 
 function make9patchedSplashIonic() {
+
+  // delete all debug resources
+  // (for "processDebugResources" issue)
+  var RES_DEBUG_PATH = 'platforms/android/build/intermediates/res/debug';
+  console.log('Deleting all debug resources : ' + RES_DEBUG_PATH);
+  rimraf(RES_DEBUG_PATH, function() {
+    console.log('ERROR deleting debug resources.');
+  }); //rm -rf
 
   // delete all splash screen images
   var dstDirFiles = fs.readdirSync(PATH_DST_DIR + '/');
